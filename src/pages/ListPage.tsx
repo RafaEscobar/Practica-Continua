@@ -10,7 +10,8 @@ export const ListPage = () => {
 
   const getData = async () => {
      try {
-      const response = await fetch('https://jsonplaceholder-typicode-com.translate.goog/posts?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc');
+      const response = await fetch('https://jsonplaceholder-typicode-com.translate.goog/comments?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc');
+    //   const response = await fetch('https://jsonplaceholder-typicode-com.translate.goog/posts?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -33,7 +34,7 @@ export const ListPage = () => {
         data={data}
         keyExtractor={({ id }, index) => id}
         renderItem={({ item }) => (
-          <Text>Titulo {cont++}# : {item.title}</Text>
+          <Text> No. Control: {item.id} - Email: {item.email} </Text>
         )}
       />
     )}
